@@ -19,7 +19,7 @@ This is a template to use for implementing a new pipeline into the LOFAR rest AP
 ```python 
 	def get_available_pipelines():
 		return {pipeline1.give_name(): pipeline1, 
-				pipeline2.give_name(): pipeline2,
-				<your pipeline>.give_name(): <your pipeline>}
+			pipeline2.give_name(): pipeline2,
+			<your pipeline>.give_name(): <your pipeline>}
 ```
 

@@ -1,0 +1,46 @@
+{ 
+      "<pipeline name>": {
+        "label": "....",
+        "schema": {
+            "type": "object",
+            "title": "Configuration Parameters:",
+            "description": "....",
+            "properties": {
+              "<param1>": {
+                "type": "integer",
+                "title": "<param1>",
+                "description": "...",
+                "default": 2,
+                "minimum": 0,
+                "exclusiveMinimum": true,
+                "maximum": 1000,
+                "exclusiveMaximum": true,    
+                "propertyOrder": 1
+              },
+               "<param2>": {
+                "type": "boolean",
+                "title": "<param2>",
+                "description": ".....",
+                "default": true,
+                "propertyOrder": 3
+              },
+              "<param3>": {
+                "type": "string",
+                "description": "",
+                "title": "<param3>",
+                "format": "select",
+                "enum": [
+                  "<option1>",
+                  "<option2>"
+                ],
+                "propertyOrder": 6
+              },
+            },
+            "required": [
+                "<param1>",
+                "<param2>",
+                "<param3>",
+            ]
+        },
+      }
+}

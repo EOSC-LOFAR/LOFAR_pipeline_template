@@ -1,15 +1,28 @@
-
+import json
 
 def give_name():
-	return __name__
+    jsonfile = give_config()
+    name = list(jsonfile.keys())[0]
+    return name
 
 def give_version():
 	return "<pipeline version>"
 
-def give_argument_names():
-	return ["<argument 1>", 
-			"<argument 2>"]
+def give_config():
+    json_config_file = os.path.join(os.path.dirname(__file__), "data", "config.json")
+    with open(json_config_file) as json_data:
+        return json.load(json_data)
 
-def run_pipeline(**kargs):
+def give_argument_names(required=False):
+    jsonfile = give_config()
+    name = list(jsonfile.keys())[0]
+    required = jsonfile[name]["schema"]["required"]
+    properties = set(jsonfile[name]["schema"]["properties"].keys())
+    if required:
+        return required
+    else:
+        return properties
+
+def run_pipeline(observation, **kargs):
 	# Start your pipeline here
 	return "<give a pipeline response>"

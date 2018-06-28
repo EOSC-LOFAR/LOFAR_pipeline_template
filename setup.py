@@ -11,4 +11,5 @@ setup(name='LOFAR_pipeline_template',
       description='',
       long_description=readme(),
       packages=['LOFAR_pipeline_template'],
+      include_package_data=True,
       zip_safe=True)

@@ -8,9 +8,11 @@ This is a template to use for implementing a new pipeline into the LOFAR rest AP
 
 2. Implement the run_pipeline(observation, \*\*kargs). This function should run the pipeline in the background in anyway you want. The kargs variable is a dict with the keys as given by the data/config.json file.
 
-3. Use pip install to install your pipeline python package for the rest API.
+3. Edit the data/config.json file. It should contain all the parameters needed by the pipeline to run and their requirements.
 
-4. In the rest API alter the pipeline_administrator.py (https://github.com/EOSC-LOFAR/lofar_workflow_api/blob/master/lofar_workflow_api/api/pipeline_administrator.py) in the following way
+4. Use pip install to install your pipeline python package for the rest API.
+
+5. In the rest API alter the pipeline_administrator.py (https://github.com/EOSC-LOFAR/lofar_workflow_api/blob/master/lofar_workflow_api/api/pipeline_administrator.py) in the following way
 4.1 Add your pipeline package to the import (e.g. import pipeline1, pipeline2, <your pipeline>)
 4.2 Add your pipeline to the dict in the get_available_pipelines() function. E.g.:
 ```python 
